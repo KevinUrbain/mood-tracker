@@ -1,0 +1,11 @@
+RewriteEngine On
+
+Options -Indexes
+
+# 1. Cas spécifique : Si l'URL est vide (on est à la racine du projet)
+RewriteRule ^$ public/index.php?url= [QSA,L]
+
+# 2. Cas général : Si la requête ne cible ni un fichier (!-f), ni un dossier (!-d)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
