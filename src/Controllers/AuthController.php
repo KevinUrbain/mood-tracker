@@ -42,9 +42,10 @@ class AuthController extends Controller
                 $_SESSION['user'] = [
                     'id' => $user->getId(),
                     'email' => $user->getEmail(),
+                    'name' => $user->getName(),
                     'role' => $user->getRole()
                 ];
-                header('Location: ' . PROJECT_URL . 'home');
+                header('Location: ' . PROJECT_URL . 'dashboard');
                 //❗ A BIEN PASSER PAR LE ROUTEUR -> PAS DE CHEMIN VERS LA VUE 
                 exit();
 

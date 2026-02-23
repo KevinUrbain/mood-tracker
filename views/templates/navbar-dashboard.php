@@ -208,7 +208,7 @@
 
                 <!-- Greeting (desktop) -->
                 <span class="d-none d-lg-inline" style="font-size:0.85rem;color:var(--text-muted);">
-                    Bonjour, <span style="color:var(--gold);">Marie</span>
+                    Bonjour, <span style="color:var(--gold);"><?= $name ?></span>
                 </span>
 
                 <!-- CSS-only avatar dropdown -->
@@ -226,8 +226,8 @@
 
                         <!-- User info -->
                         <div class="dropdown-user-block">
-                            <span class="d-name">Marie Dupont</span>
-                            <span class="d-email">marie@exemple.com</span>
+                            <span class="d-name"><?= $name ?></span>
+                            <span class="d-email"><?= $email ?></span>
                         </div>
 
                         <!-- Menu items -->

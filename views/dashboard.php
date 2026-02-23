@@ -9,7 +9,7 @@
             </div>
             <h2 class="greeting-title">
                 Comment vous sentez-vous,<br />
-                <strong>Marie</strong> ?
+                <strong><?= $name ?></strong> ?
             </h2>
         </div>
 

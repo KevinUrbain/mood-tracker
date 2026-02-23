@@ -17,10 +17,17 @@ class HomeController extends Controller
 
     public function dashboard()
     {
+        $this->redirectIfNotConnected();
+
+        $userName = $_SESSION['user']['name'] ?? 'Inconnu';
+        $userEmail = $_SESSION['user']['email'] ?? '';
+
         $this->render('dashboard', [
             'title' => 'MoodTracker — Mon journal',
             'nav' => 'navbar-dashboard',
-            'currentDate' => DateHelper::formatFrenchDate()
+            'currentDate' => DateHelper::formatFrenchDate(),
+            'name' => $userName,
+            'email' => $userEmail
         ]);
     }
 }
