@@ -15,14 +15,9 @@ $url = $_GET['url'] ?? 'login';
 
 
 match ($url) {
-    'home' => (new HomeController())->index(),
-    'users' => (new UserController())->displayAllUsers(),
-    'login' => (new AuthController())->login(),
+    'home' => (new HomeController())->index(), //Ok fait !
+    'users' => (new UserController())->displayAllUsers(), //Ne sert à rien pour l'instant
+    'login' => (new AuthController())->login(), //OK fait !
+    'register' => (new AuthController())->register(), //Développer la méthode
     default => (new AuthController())->login()
 };
-
-var_dump($url);
-
-?>
-
-<a href="<?= $baseUrl . '/css/style.css' ?>">Go to css</a>

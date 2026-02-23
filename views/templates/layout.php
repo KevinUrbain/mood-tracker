@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?></title>
+    <?php require_once ROOT . '/views/templates/head.php'; ?>
 </head>
 
 <body>
-    <nav>
-        <a href="">Accueil</a>
-        <a href="">S'inscrire</a>
-        <a href="">Se connecter</a>
-        <a href="">Se déconnecter</a>
-    </nav>
+    <?php require_once ROOT . '/views/templates/navbar.php'; ?>
+    <!-- CONTENU PRINCIPAL -->
     <?= $content ?>
+    <!-- CONTENU PRINCIPAL -->
+    <?php require_once ROOT . '/views/templates/footer.php'; ?>
 </body>
 
 </html>

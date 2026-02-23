@@ -56,8 +56,13 @@ class AuthController extends Controller
         }
 
         $this->render('login', [
-            'title' => 'Page de connexion',
+            'title' => 'MoodTracker - Connexion',
             'errors' => (!empty($errors) ? $errors : '')
         ]);
+    }
+
+    public function register()
+    {
+        //Développer
     }
 }

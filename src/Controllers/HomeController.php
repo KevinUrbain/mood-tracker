@@ -10,9 +10,8 @@ class HomeController extends Controller
     public function index()
     {
         $this->render('home', [
-            'title' => 'Acceuil', // devient $title = 'Accueil'
+            'title' => 'MoodTracker — Prenez soin de vous', // devient $title = 'MoodTracker — Prenez soin de vous'
             'message' => "Bienvenue sur l'accueil" // devient $message = 'Bienvenue sur l'accueil'
         ]);
     }
-
 }
