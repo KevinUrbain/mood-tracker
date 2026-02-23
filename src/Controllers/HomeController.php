@@ -20,7 +20,7 @@ class HomeController extends Controller
         $this->render('dashboard', [
             'title' => 'MoodTracker — Mon journal',
             'nav' => 'navbar-dashboard',
-            'date' => DateHelper::formatFrenchDate()
+            'currentDate' => DateHelper::formatFrenchDate()
         ]);
     }
 }

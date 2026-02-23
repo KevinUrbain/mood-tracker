@@ -5,7 +5,7 @@
         <!-- Greeting -->
         <div class="dash-greeting">
             <div class="date-pill">
-                📅 <?php echo $date ?>
+                📅 <?php echo $currentDate ?>
             </div>
             <h2 class="greeting-title">
                 Comment vous sentez-vous,<br />
