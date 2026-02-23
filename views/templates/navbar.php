@@ -1,6 +1,5 @@
 <!-- ═══════════════════════════════════
        NAVBAR — visiteur non connecté
-       (liens Connexion + S'inscrire)
        ═══════════════════════════════════ -->
 <nav class="mood-navbar navbar navbar-expand-lg">
     <div class="container">

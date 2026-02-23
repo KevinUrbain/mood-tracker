@@ -11,11 +11,12 @@ require_once '../config/config.php';
 
 
 
-$url = $_GET['url'] ?? 'login';
+$url = $_GET['url'] ?? 'landing';
 
 
 match ($url) {
-    'home' => (new HomeController())->index(), //Ok fait !
+    'home' => (new HomeController())->index(), //Vers la page par défaut
+    'dashboard' => (new HomeController())->dashboard(), //Vers la page si connecté
     'users' => (new UserController())->displayAllUsers(), //Ne sert à rien pour l'instant
     'login' => (new AuthController())->login(), //OK fait !
     'register' => (new AuthController())->register(), //Développer la méthode
