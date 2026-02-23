@@ -24,3 +24,5 @@ match ($url) {
     'profile' => (new UserController())->showById(), //Développer la vue profile et ajouter une méthode render() dans le UserController
     default => (new AuthController())->login()
 };
+
+//!!!! password_verify() à ajouter dans login() du AuthController
