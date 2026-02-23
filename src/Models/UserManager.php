@@ -24,7 +24,7 @@ class UserManager
         return $users;
     }
 
-    public function findUserByEmail($email): array|null
+    public function findUserByEmail($email): User|null
     {
         $sql = "SELECT * FROM users WHERE email = :email";
         $request = $this->connexion->prepare($sql);
@@ -32,10 +32,12 @@ class UserManager
             ':email' => $email
         ]);
         if ($stmt) {
-            $user = $request->fetch(\PDO::FETCH_ASSOC);
+            $userRequest = $request->fetch(\PDO::FETCH_ASSOC);
         }
-        if ($user) {
-            return $user;
+        if ($userRequest) {
+            $user = new User();
+            $userByEmail = $user->hydrate($userRequest);
+            return $userByEmail;
         }
 
         return null;

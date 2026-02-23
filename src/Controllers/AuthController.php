@@ -3,7 +3,6 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Core\Controller;
-use App\Entities\User;
 use App\Models\UserManager;
 
 class AuthController extends Controller
@@ -33,7 +32,7 @@ class AuthController extends Controller
                     echo 'Utilisateur pas trouvé';
                     $errors['user_notfound'] = 'Utilisateur introuvable';
                 } else {
-                    $user = (new User())->hydrate($userData);
+                    $user = $userData;
                 }
             }
 

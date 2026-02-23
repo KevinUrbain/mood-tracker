@@ -21,4 +21,19 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * Récupère un objet User grâce à la méthode findUserByEmail(string $email) via son email et retourne l'id. Permet d'avoir l'id via la base de données et de faire des traitements
+     *
+     * @return string Retourne l'id de l'utilisateur où id est de type string
+     */
+    public function showById(): string
+    {
+
+        $userManager = new UserManager();
+        $userByEmail = $userManager->findUserByEmail($_SESSION['user']['email']);
+
+        $userById = $userByEmail->getId();
+        return (string) $userById;
+    }
+
 }

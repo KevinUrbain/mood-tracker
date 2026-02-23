@@ -21,5 +21,6 @@ match ($url) {
     'login' => (new AuthController())->login(), //OK fait !
     'register' => (new AuthController())->register(), //Développer la méthode
     'logout' => (new AuthController())->logout(),
+    'profile' => (new UserController())->showById(), //Développer la vue profile et ajouter une méthode render() dans le UserController
     default => (new AuthController())->login()
 };
