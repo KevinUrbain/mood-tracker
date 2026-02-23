@@ -4,6 +4,7 @@ namespace App\Core;
 
 abstract class Controller
 {
+
     protected function render(string $pathView, array $data = [])
     {
         extract($data);
