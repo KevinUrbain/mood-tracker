@@ -178,7 +178,7 @@
     <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="<?= PROJECT_URL . 'home' ?>">
             <span class="brand-dot"></span>
             MoodTracker
         </a>
@@ -193,7 +193,7 @@
         <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav mx-auto align-items-center gap-2">
                 <li class="nav-item">
-                    <a class="nav-link-mood active" href="index.html">Mon journal</a>
+                    <a class="nav-link-mood active" href="">Mon journal</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link-mood" href="#">Statistiques</a>
@@ -231,7 +231,7 @@
                         </div>
 
                         <!-- Menu items -->
-                        <a href="#" class="dd-item">
+                        <a href="" class="dd-item">
                             <span class="icon">👤</span>
                             Mon profil
                         </a>
@@ -246,7 +246,7 @@
 
                         <hr class="dd-divider" />
 
-                        <a href="login.html" class="dd-item danger">
+                        <a href="<?= PROJECT_URL . 'logout' ?>" class="dd-item danger">
                             <span class="icon">🚪</span>
                             Se déconnecter
                         </a>

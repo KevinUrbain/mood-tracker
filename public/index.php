@@ -20,5 +20,6 @@ match ($url) {
     'users' => (new UserController())->displayAllUsers(), //Ne sert à rien pour l'instant
     'login' => (new AuthController())->login(), //OK fait !
     'register' => (new AuthController())->register(), //Développer la méthode
+    'logout' => (new AuthController())->logout(),
     default => (new AuthController())->login()
 };

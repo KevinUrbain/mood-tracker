@@ -66,4 +66,12 @@ class AuthController extends Controller
     {
         //Développer
     }
+
+    public function logout()
+    {
+        $_SESSION = [];
+        session_destroy();
+        header('Location: ' . PROJECT_URL . 'login');
+        exit();
+    }
 }
