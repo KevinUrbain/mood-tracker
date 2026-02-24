@@ -18,11 +18,11 @@ class AuthController extends Controller
             $password = $_POST['password'];
 
             if (empty($email) || empty($password)) {
-                $errors['inputs_empty'] = 'Veuillez remplir tous les champs';
+                $errors[] = 'Veuillez remplir tous les champs';
             }
 
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors['email_invalid'] = 'Format email invalide';
+                $errors[] = 'Format email invalide';
             }
 
             if (empty($errors)) {
@@ -47,7 +47,7 @@ class AuthController extends Controller
                 //❗ A BIEN PASSER PAR LE ROUTEUR -> PAS DE CHEMIN VERS LA VUE 
                 exit();
             } else {
-                $errors['password_invalid'] = 'Identifiants incorrects';
+                $errors[] = 'Identifiants incorrects';
                 //On reste flou sur la cause de l'échec du login
             }
         }
