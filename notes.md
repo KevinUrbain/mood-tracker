@@ -1,6 +1,6 @@
 🚀 Pistes d'amélioration
 
-1. Le Routeur
+# 1. Le Routeur
 
 Le routeur dans public/index.php est simple et fonctionnel pour ce projet. C'est un excellent début.
 
@@ -12,6 +12,8 @@ Conseil : Renseigne-toi sur les composants de routage dédiés. Des bibliothèqu
 Analyse : Dans tes contrôleurs, tu crées directement tes dépendances avec new UserManager().
 
 // Dans AuthController.php
+
+`
 $userManager = new UserManager();
 
 Cela crée un couplage fort : ton AuthController est directement lié à l'implémentation concrète de UserManager. C'est plus difficile à tester et à faire évoluer.
@@ -36,6 +38,7 @@ private UserManager $userManager;
     }
 
 }
+`
 
 Pour aller plus loin, les conteneurs de DI (comme PHP-DI ou celui de Symfony) automatisent ce processus. C'est un concept central dans le développement professionnel.
 
