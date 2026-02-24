@@ -15,13 +15,13 @@ $url = $_GET['url'] ?? 'landing';
 
 
 match ($url) {
-    'home' => (new HomeController())->index(), //Vers la page par défaut
-    'dashboard' => (new HomeController())->dashboard(), //Vers la page si connecté
-    'users' => (new UserController())->displayAllUsers(), //Ne sert à rien pour l'instant
-    'login' => (new AuthController())->login(), //OK fait !
-    'register' => (new AuthController())->register(), //Développer la méthode
-    'logout' => (new AuthController())->logout(),
-    'profile' => (new UserController())->showById(), //Développer la vue profile et ajouter une méthode render() dans le UserController
+    'home' => (new HomeController())->index(), // Envoie vers la landing page par défaut
+    'dashboard' => (new HomeController())->dashboard(), // Envoie vers le dashboard si utilisateur connecté
+    'users' => (new UserController())->displayAllUsers(), // Affiche tous les utilisateurs (A supprimer par la suite)
+    'login' => (new AuthController())->login(), // Envoie vers la page de connexion
+    'register' => (new AuthController())->register(), // Envoie vers la pge d'inscription
+    'logout' => (new AuthController())->logout(), // Déconnecter l'utilisateur (via le bouton dans le dashboard)
+    'profile' => (new UserController())->showById(), // A FAIRE : Développer la vue profile et ajouter une méthode render() dans le UserController
     default => (new AuthController())->login()
 };
 
