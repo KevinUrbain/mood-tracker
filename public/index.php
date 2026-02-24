@@ -25,4 +25,4 @@ match ($url) {
     default => (new AuthController())->login()
 };
 
-//!!!! password_verify() à ajouter dans login() du AuthController
+
