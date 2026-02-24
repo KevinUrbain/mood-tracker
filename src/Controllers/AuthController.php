@@ -75,7 +75,7 @@ class AuthController extends Controller
                 $errors[] = 'Format email invalide';
             }
 
-            if (strlen($password_hash) < 8) {
+            if (strlen($$_POST['password']) < 8) {
                 $errors[] = 'Entrer 8 caractères minimum';
             }
 
