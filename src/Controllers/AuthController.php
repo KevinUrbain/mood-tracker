@@ -22,7 +22,7 @@ class AuthController extends Controller
             }
 
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors['email_invalid'] = 'format email invalide';
+                $errors['email_invalid'] = 'Format email invalide';
             }
 
             if (empty($errors)) {
@@ -35,7 +35,7 @@ class AuthController extends Controller
                 }
             }
 
-            if ($user && is_object($user) && $user->getPassword_hash() === $password) {
+            if ($user && is_object($user) && password_verify($password, $user->getPassword_hash())) {
                 session_regenerate_id(true);
                 $_SESSION['user'] = [
                     'id' => $user->getId(),
@@ -54,7 +54,7 @@ class AuthController extends Controller
 
         $this->render('login', [
             'title' => 'MoodTracker - Connexion',
-            'errors' => (!empty($errors) ? $errors : '')
+            'errors' => $errors
         ]);
     }
 
@@ -93,7 +93,7 @@ class AuthController extends Controller
                 $request = $userManager->addUser($userObj);
 
                 if ($request) {
-                    header('LMocation: ' . PROJECT_URL . 'login');
+                    header('Location: ' . PROJECT_URL . 'login');
                     exit();
                 }
             }

@@ -30,6 +30,11 @@
             <!-- Submit -->
             <button type="submit" class="btn-mood-primary">Se connecter</button>
         </form>
+        <?php foreach ($errors as $error): ?>
+            <span style="color: red;">
+                <?= $error . '<br>' ?>
+            </span>
+        <?php endforeach; ?>
 
         <hr class="divider" />
 
