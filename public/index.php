@@ -21,7 +21,7 @@ match ($url) {
     'login' => (new AuthController())->login(), // Envoie vers la page de connexion
     'register' => (new AuthController())->register(), // Envoie vers la pge d'inscription
     'logout' => (new AuthController())->logout(), // Déconnecter l'utilisateur (via le bouton dans le dashboard)
-    'profile' => (new UserController())->showById(), // A FAIRE : Développer la vue profile et ajouter une méthode render() dans le UserController
+    'profile' => (new UserController())->showUser($_SESSION['user']['id']), // A FAIRE : Développer la vue profile et ajouter une méthode render() dans le UserController
     default => (new AuthController())->login()
 };
 

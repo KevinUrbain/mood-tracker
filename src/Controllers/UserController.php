@@ -26,7 +26,6 @@ class UserController extends Controller
      */
     public function showById(): string
     {
-
         $userManager = new UserManager();
         $userByEmail = $userManager->findUserByEmail($_SESSION['user']['email']);
 
@@ -34,4 +33,19 @@ class UserController extends Controller
         return (string) $userById;
     }
 
+    public function showUser(int $id)
+    {
+        $userManager = new UserManager();
+        $user = $userManager->findUserById($id);
+
+        $this->render('profile', [
+        'title' => 'Mon profil',
+        'nav' => 'navbar-dashboard',
+        'id' => $user->getId(),
+        'name' =>$user->getName(),
+        'birthday' => $user->getBirthday_date(),
+        'email' => $user->getEmail(),
+        'dateCreation' => $user->getCreated_at()
+        ]);
+    }
 }
