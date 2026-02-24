@@ -8,9 +8,6 @@ use App\Controllers\UserController;
 require_once '../vendor/autoload.php';
 require_once '../config/config.php';
 
-
-
-
 $url = $_GET['url'] ?? '';
 
 match ($url) {
