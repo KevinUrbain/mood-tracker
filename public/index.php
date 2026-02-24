@@ -13,9 +13,6 @@ require_once '../config/config.php';
 
 $url = $_GET['url'] ?? '';
 
-// var_dump($url);
-// die();
-
 match ($url) {
     '' => (new HomeController())->index(), // Envoie vers la landing page par défaut
     'home' => (new HomeController())->index(), // Envoie vers la landing page si home
