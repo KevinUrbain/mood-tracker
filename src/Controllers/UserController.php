@@ -8,8 +8,6 @@ use App\Models\UserManager;
 
 class UserController extends Controller
 {
-
-
     public function displayAllUsers()
     {
         $userManager = new UserManager();

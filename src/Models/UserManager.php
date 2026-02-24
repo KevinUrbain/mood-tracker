@@ -43,5 +43,20 @@ class UserManager
         return null;
     }
 
+    public function addUser(User $user): bool
+    {
+        $sql = "INSERT INTO users (name, email, password_hash, birthday_date) VALUES (:name, :email, :password_hash, :birthday_date)";
+        $request = $this->connexion->prepare($sql);
+
+        $stmt = $request->execute([
+            ':name' => $user->getName(),
+            ':email' => $user->getEmail(),
+            'password_hash' => $user->getPassword_hash(),
+            ':birthday_date' => $user->getBirthday_date()
+        ]);
+
+        return $stmt;
+    }
+
 
 }

@@ -27,26 +27,6 @@
                     placeholder="••••••••" autocomplete="current-password" required />
             </div>
 
-            <!-- Remember me -->
-            <div class="mb-4 d-flex align-items-center gap-2">
-                <input class="form-check-input" type="checkbox" id="remember" name="remember" style="
-                background: var(--bg-input);
-                border-color: var(--border);
-                width: 1rem;
-                height: 1rem;
-                margin: 0;
-                cursor: pointer;
-              " />
-                <label for="remember" style="
-                font-size: 0.85rem;
-                color: var(--text-muted);
-                cursor: pointer;
-                margin: 0;
-              ">
-                    Se souvenir de moi
-                </label>
-            </div>
-
             <!-- Submit -->
             <button type="submit" class="btn-mood-primary">Se connecter</button>
         </form>
