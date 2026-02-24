@@ -11,11 +11,14 @@ require_once '../config/config.php';
 
 
 
-$url = $_GET['url'] ?? 'landing';
+$url = $_GET['url'] ?? '';
 
+// var_dump($url);
+// die();
 
 match ($url) {
-    'home' => (new HomeController())->index(), // Envoie vers la landing page par défaut
+    '' => (new HomeController())->index(), // Envoie vers la landing page par défaut
+    'home' => (new HomeController())->index(), // Envoie vers la landing page si home
     'dashboard' => (new HomeController())->dashboard(), // Envoie vers le dashboard si utilisateur connecté
     'users' => (new UserController())->displayAllUsers(), // Affiche tous les utilisateurs (A supprimer par la suite)
     'login' => (new AuthController())->login(), // Envoie vers la page de connexion
