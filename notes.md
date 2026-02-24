@@ -11,15 +11,18 @@ Conseil : Renseigne-toi sur les composants de routage dédiés. Des bibliothèqu
 
 Analyse : Dans tes contrôleurs, tu crées directement tes dépendances avec new UserManager().
 
+```
 // Dans AuthController.php
-
-`code`
 $userManager = new UserManager();
+
+```
 
 Cela crée un couplage fort : ton AuthController est directement lié à l'implémentation concrète de UserManager. C'est plus difficile à tester et à faire évoluer.
 Conseil : Apprends le principe de l'Injection de Dépendances (DI). L'idée est de "fournir" les dépendances à une classe plutôt qu'elle ne les crée elle-même, souvent via son constructeur.
 
 // Exemple conceptuel
+
+```php
 class AuthController extends Controller
 {
 private UserManager $userManager;
@@ -38,6 +41,7 @@ private UserManager $userManager;
     }
 
 }
+```
 
 Pour aller plus loin, les conteneurs de DI (comme PHP-DI ou celui de Symfony) automatisent ce processus. C'est un concept central dans le développement professionnel.
 
@@ -46,3 +50,7 @@ Pour aller plus loin, les conteneurs de DI (comme PHP-DI ou celui de Symfony) au
    Conseil : Les professionnels utilisent des variables d'environnement pour gérer la configuration qui change d'un environnement à l'autre (développement, test, production). La pratique standard en PHP est d'utiliser un fichier .env à la racine du projet et la bibliothèque vlucas/phpdotenv pour les charger
 
 Pour franchir la dernière étape, je te suggère de te concentrer sur les points ci-dessus, en particulier le routage et l'injection de dépendances. La meilleure façon de les apprendre en contexte est de commencer à regarder un micro-framework (comme Slim) ou un framework complet (comme Symfony ou Laravel). En recréant ce même projet avec l'un d'eux, tu seras "forcé" d'appliquer ces bonnes pratiques et tu verras ta compétence faire un bond en avant.
+
+```
+
+```
