@@ -231,7 +231,7 @@
                         </div>
 
                         <!-- Menu items -->
-                        <a href="" class="dd-item">
+                        <a href="<?= PROJECT_URL . 'profile' ?>" class="dd-item">
                             <span class="icon">👤</span>
                             Mon profil
                         </a>

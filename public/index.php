@@ -1,9 +1,9 @@
 <?php
 session_start();
+
 use App\Controllers\AuthController;
 use App\Controllers\HomeController;
 use App\Controllers\UserController;
-
 
 require_once '../vendor/autoload.php';
 require_once '../config/config.php';
@@ -21,5 +21,3 @@ match ($url) {
     'profile' => (new UserController())->showUser($_SESSION['user']['id']), // A FAIRE : Développer la vue profile et ajouter une méthode render() dans le UserController
     default => (new AuthController())->login()
 };
-
-

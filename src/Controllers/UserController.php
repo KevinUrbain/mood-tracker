@@ -1,9 +1,12 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Models\UserManager;
+use App\Utils\DisplayUsernameProfile;
 
 
 class UserController extends Controller
@@ -39,13 +42,14 @@ class UserController extends Controller
         $user = $userManager->findUserById($id);
 
         $this->render('profile', [
-        'title' => 'Mon profil',
-        'nav' => 'navbar-dashboard',
-        'id' => $user->getId(),
-        'name' =>$user->getName(),
-        'birthday' => $user->getBirthday_date(),
-        'email' => $user->getEmail(),
-        'dateCreation' => $user->getCreated_at()
+            'title' => 'Mon profil',
+            'nav' => 'navbar-dashboard',
+            'id' => $user->getId(),
+            'name' => $user->getName(),
+            'birthday' => $user->getBirthday_date(),
+            'email' => $user->getEmail(),
+            'formatUsernameProfile' => DisplayUsernameProfile::formatUsernameProfile($user->getName()),
+            'dateCreation' => $user->getCreated_at()
         ]);
     }
 }

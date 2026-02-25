@@ -11,4 +11,5 @@ $scriptName = dirname($_SERVER['SCRIPT_NAME'] ?? '');
 $baseUrl = $protocol . '://' . $host . $scriptName;
 
 define('BASE_URL', $baseUrl);
+
 define('PROJECT_URL', 'http://localhost/Mood-tracker/');
